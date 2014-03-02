@@ -3,7 +3,7 @@
 
 var http = require('http');
 queryString = process.argv[2];
-var req = http.get("http://openapi.baidu.com/public/2.0/bmt/translate?client_id=rZF1dCxUwipGDnMCzEs3cQbp&from=auto&to=auto&q=" + queryString, function(res) {
+var req = http.get("http://openapi.baidu.com/public/2.0/bmt/translate?client_id=&from=auto&to=auto&q=" + queryString, function(res) {
         //console.log('STATUS: ' + res.statusCode);
         //console.log('HEADERS: ' + JSON.stringify(res.headers));
         res.setEncoding('utf8');
