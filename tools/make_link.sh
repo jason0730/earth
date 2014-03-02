@@ -8,6 +8,7 @@ file_full_path=`find $SCRIPTS_HOME -name $file_name`
 
 link_name=`echo $file_name | cut -d '.' -f1`
 bin_file_path=`which $link_name`
-[ -z $bin_file_path ] && bin_file_path="$HOME/bin/$link_name" || rm $bin_file_path
+[ -z $bin_file_path ] && bin_file_path="$HOME/bin/$link_name" 
+rm -f $bin_file_path
 chmod +x $file_full_path
 ln -v -s $file_full_path $bin_file_path 
