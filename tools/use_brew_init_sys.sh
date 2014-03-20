@@ -22,3 +22,4 @@ brew install xclip
 brew install watch
 brew install terminal-notifier
 brew install pstree
+brew install wget

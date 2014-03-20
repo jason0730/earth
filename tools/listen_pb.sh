@@ -131,6 +131,6 @@ done
 || terminal-notifier \
         -title "原地复活?" \
         -message "terminal-notifier挂了" \
-        -execute "source /Users/jason/.bash_profile;listen_pb" \
+        -execute "source /Users/jason/.bash_profile;listen_pb trac.haodf.net" \
         -group notify > /dev/null \
 &
