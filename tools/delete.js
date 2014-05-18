@@ -1,0 +1,10 @@
+document.getElementById('actionSelect1').click();document.getElementById('deleteLink_1').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect2').click();document.getElementById('deleteLink_2').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect3').click();document.getElementById('deleteLink_3').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect4').click();document.getElementById('deleteLink_4').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect5').click();document.getElementById('deleteLink_5').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect6').click();document.getElementById('deleteLink_6').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect7').click();document.getElementById('deleteLink_7').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect8').click();document.getElementById('deleteLink_8').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect9').click();document.getElementById('deleteLink_9').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);
+document.getElementById('actionSelect10').click();document.getElementById('deleteLink_10').click(); var deleteId = jQuery("input[name='delete']").attr('id'); Fion.deleteItem(deleteId);

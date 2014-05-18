@@ -23,3 +23,13 @@ brew install watch
 brew install terminal-notifier
 brew install pstree
 brew install wget
+brew install htop
+brew install ack
+brew install cloc
+brew install cowsay
+brew install ranger
+brew install homebrew/games/nethack
+brew install tmux
+brew install docker
+brew install boot2docker
+brew install dos2unix
