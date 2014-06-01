@@ -33,3 +33,10 @@ brew install tmux
 brew install docker
 brew install boot2docker
 brew install dos2unix
+
+brew tap homebrew/dupes
+brew tap josegonzalez/homebrew-php
+
+brew tap homebrew/nginx
+brew install nginx-full
+brew install php55
