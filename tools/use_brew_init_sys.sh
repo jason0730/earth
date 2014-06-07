@@ -40,3 +40,4 @@ brew tap josegonzalez/homebrew-php
 brew tap homebrew/nginx
 brew install nginx-full
 brew install php55
+brew install git
