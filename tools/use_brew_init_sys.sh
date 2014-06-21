@@ -45,3 +45,4 @@ brew install htop
 brew install phploc
 brew install phpcpd
 brew install phpmd
+brew install git
