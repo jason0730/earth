@@ -11,3 +11,4 @@ export CLICOLOR=1
 
 #sets up thecolor scheme for list export
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
