@@ -36,7 +36,12 @@ brew install dos2unix
 
 brew tap homebrew/dupes
 brew tap josegonzalez/homebrew-php
+brew install php55  --with-debug --with-fpm --with-gmp --with-imap --with-intl --with-libmysql --with-phpdbg --with-thread-safety --with-tidy
 
 brew tap homebrew/nginx
 brew install nginx-full
-brew install php55
+
+brew install htop
+brew install phploc
+brew install phpcpd
+brew install phpmd

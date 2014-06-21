@@ -15,4 +15,3 @@ var req = http.get("http://openapi.baidu.com/public/2.0/bmt/translate?client_id=
 
 req.end();
 
-# 4
