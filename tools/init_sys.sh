@@ -46,3 +46,7 @@ brew install phploc
 brew install phpcpd
 brew install phpmd
 brew install git
+brew install fbida
+brew install freeimage
+
+npm install -g picture-tube
