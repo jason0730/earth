@@ -10,7 +10,7 @@ case "$1" in
     if [ -f $pid_file ];then
         echo "first stop ssh-proxy , file $pid_file already had " && exit 1
     fi
-    ssh -C -D 127.0.0.1:61024 sshproxy@$ip -p $port 'iostat -xk 5' >/dev/null &
+    ssh -C -D 127.0.0.1:61024 sshproxy@$ip -p $port -g -c aes256-cbc 'iostat -xk 5' >/dev/null &
     pid="$!"
     if [ -z $pid ];then
         echo "invalid pid" && exit 2

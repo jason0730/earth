@@ -1,18 +1,18 @@
 #!/bin/bash
 
-brew prune
-brew doctor
-xcode-select --install
+##brew prune
+##brew doctor
+##xcode-select --install
 
 brew install python
 brew link --overwrite python
 
-brew tap homebrew/versions
-brew install subversion16
+##brew tap homebrew/versions
+##brew install subversion16
 #brew untap homebrew/versions
 
-brew tap phinze/homebrew-cask
-brew install brew-cask
+##brew tap phinze/homebrew-cask
+##brew install brew-cask
 brew cask install sublime-text
 
 brew install coreutils
@@ -26,20 +26,20 @@ brew install wget
 brew install htop
 brew install ack
 brew install cloc
-brew install cowsay
+##brew install cowsay
 brew install ranger
-brew install homebrew/games/nethack
+##brew install homebrew/games/nethack
 brew install tmux
 brew install docker
 brew install boot2docker
 brew install dos2unix
 
-brew tap homebrew/dupes
-brew tap josegonzalez/homebrew-php
-brew install php55  --with-debug --with-fpm --with-gmp --with-imap --with-intl --with-libmysql --with-phpdbg --with-thread-safety --with-tidy
-
-brew tap homebrew/nginx
-brew install nginx-full
+##brew tap homebrew/dupes
+##brew tap josegonzalez/homebrew-php
+##brew install php55  --with-debug --with-fpm --with-gmp --with-imap --with-intl --with-libmysql --with-phpdbg --with-thread-safety --with-tidy
+##
+##brew tap homebrew/nginx
+##brew install nginx-full
 
 brew install htop
 brew install phploc
@@ -47,6 +47,13 @@ brew install phpcpd
 brew install phpmd
 brew install git
 brew install fbida
-brew install freeimage
+##brew install freeimage
 
-npm install -g picture-tube
+##npm install -g picture-tube
+##brew install Pidgin
+##brew install mtr
+##brew install node
+brew install netcat6
+
+curl -L https://github.com/git/git/raw/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
+echo "source ~/.git-completion.bash" >> ~/.bashrc
