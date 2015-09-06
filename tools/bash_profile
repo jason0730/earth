@@ -4,11 +4,3 @@ if [ "${BASH-no}" != "no" ]; then
 	[ -r ~/.bashrc ] && . ~/.bashrc
 fi
 
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/jason/bin
-
-#enables colorin the terminal bash shell export
-export CLICOLOR=1
-
-#sets up thecolor scheme for list export
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
