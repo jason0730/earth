@@ -57,3 +57,5 @@ brew install netcat6
 
 curl -L https://github.com/git/git/raw/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
 echo "source ~/.git-completion.bash" >> ~/.bashrc
+
+curl -L git.io/cow  | bash
