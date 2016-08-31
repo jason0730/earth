@@ -54,8 +54,13 @@ brew install fbida
 ##brew install mtr
 ##brew install node
 brew install netcat6
+brew install httpie
 
 curl -L https://github.com/git/git/raw/master/contrib/completion/git-completion.bash > ~/.git-completion.bash
 echo "source ~/.git-completion.bash" >> ~/.bashrc
 
 curl -L git.io/cow  | bash
+
+brew install icdiff
+brew install moreutils
+brew cask install java

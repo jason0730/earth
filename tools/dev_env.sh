@@ -2,7 +2,9 @@
 
 open /Applications/Evernote.app/
 open /Applications/QQ.app/
-open /Applications/Foxmail.app/
+#open /Applications/Foxmail.app/
 open /Applications/Reeder.app/
-open /Applications/RTX.app/
+#open /Applications/RTX.app/
 open /Users/jason/Applications/Google\ Chrome.app
+#open /Applications/Pocket.app/
+open /Applications/YoMail.app
