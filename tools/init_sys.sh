@@ -64,3 +64,5 @@ curl -L git.io/cow  | bash
 brew install icdiff
 brew install moreutils
 brew cask install java
+curl -L git.io/cow | bash
+npm install urlencode
