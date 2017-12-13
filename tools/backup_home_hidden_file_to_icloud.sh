@@ -19,12 +19,12 @@ function link_icloud_dir_to_home_hidden_file() {
 icloudpath="$HOME/Library/Mobile Documents/com~apple~CloudDocs/$1"
 test ! -d "$icloudpath" && echo "[$icloudpath] no such Directory" && exit 1
 
-ls -a $HOME/ | grep '^\.' | grep -E -v  '^\.+$' | while read filename
+ls -a $HOME/ | grep '^\.' | grep -v '^.Trash$' | grep -E -v  '^\.+$' | while read filename
 do
     move_hidden_files_to_icloud "$filename" "$icloudpath"
 done
 
-ls "$icloudpath" | while read shortname
+ls "$icloudpath" | grep -v '^__home_dir__$' | while read shortname
 do
     link_icloud_dir_to_home_hidden_file "$shortname" "$icloudpath"
 done
