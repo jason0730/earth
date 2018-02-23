@@ -3,6 +3,7 @@
 open /Applications/Evernote.app/
 open /Applications/QQ.app/
 open /Applications/Google\ Chrome.app/
+open /Applications/WeChat.app/
 #open /Applications/Foxmail.app/
 #open /Applications/Reeder.app/
 #open /Applications/RTX.app/

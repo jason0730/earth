@@ -1,30 +1,46 @@
 #!/bin/bash
 
-function move_hidden_files_to_icloud() {
-    local filename=$1
-    local icloudpath=$2
-    local shortname=`echo -n $filename | cut -d '.' -f2-`
+############################## functions ##############################
 
-    test ! -L "$HOME/$filename" && test ! -e "$icloudpath/$shortname" && mv -v "$HOME/$filename" "$icloudpath/$shortname" && echo "move done"
+function move_hidden_files_to_icloud() {
+    local fullname=$1
+    local icloudpath=$2
+    local shortname=`echo -n $fullname | cut -d '.' -f2-`
+
+    test ! -L "$HOME/$fullname" \
+    && test ! -e "$icloudpath/$shortname" \
+    && mv -v "$HOME/$fullname" "$icloudpath/$shortname" \
+    && echo "move done"
 }
 
 function link_icloud_dir_to_home_hidden_file() {
     local shortname=$1
     local icloudpath=$2
-    test ! -e "$HOME/.$shortname" && ln -v -s  "$icloudpath/$shortname" "$HOME/.$shortname" && echo "create link done"
+
+    test -e "$icloudpath/$shortname" \
+    && test ! -e "$HOME/.$shortname" \
+    && ln -v -s  "$icloudpath/$shortname" "$HOME/.$shortname" \
+    && echo "create link done"
 }
+
+
+############################## process ##############################
 
 [ -z $1 ] && echo "please input directory name" && exit 1
 
 icloudpath="$HOME/Library/Mobile Documents/com~apple~CloudDocs/$1"
+ignore_list="$icloudpath/.ignore"
+
+test ! -f "$ignore_list" && touch "$ignore_list"
 test ! -d "$icloudpath" && echo "[$icloudpath] no such Directory" && exit 1
 
-ls -a $HOME/ | grep '^\.' | grep -v '^.Trash$' | grep -E -v  '^\.+$' | while read filename
+#ls -a $HOME/ | grep '^\.' | grep -v '^.Trash$' | grep -E -v  '^\.+$' | while read fullname
+ls -a $HOME/ | grep '^\.' | grep -E -v  '^\.+$' | while read fullname
 do
-    move_hidden_files_to_icloud "$filename" "$icloudpath"
+    grep "^$fullname$" "$ignore_list" >/dev/null || move_hidden_files_to_icloud "$fullname" "$icloudpath"
 done
 
-ls "$icloudpath" | grep -v '^__home_dir__$' | while read shortname
+ls "$icloudpath" | while read shortname
 do
-    link_icloud_dir_to_home_hidden_file "$shortname" "$icloudpath"
+    grep "^$shortname$" "$ignore_list" >/dev/null || link_icloud_dir_to_home_hidden_file "$shortname" "$icloudpath"
 done
