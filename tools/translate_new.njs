@@ -41,7 +41,10 @@ const req = https.request(options, (res) => {
   res.setEncoding('utf8');
   res.on('data', (chunk) => {
     var chunk = JSON.parse(chunk);
-    console.log(chunk.data.translations[0].translatedText);
+    chunk.data.translations.forEach((item, index) => {
+            console.log(item.translatedText);
+    });
+    //console.log(chunk.data.translations[0].translatedText);
   });
   res.on('end', () => {
     //console.log('No more data in response.');
