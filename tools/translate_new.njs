@@ -1,19 +1,57 @@
 #!/usr/local/bin/node
 
-var client_config = require('./client_config.njs');
-var http = require('http');
-var urlencode = require('urlencode');
-var queryString = urlencode(process.argv[2]);
+const client_config = require('./client_config.njs');
+const https = require('https');
+const urlencode = require('urlencode');
+const queryString = require('querystring');
+//let query_string = urlencode(process.argv[2]);
+let query_string = process.argv[2];
+let source_lang = process.argv[3];
+let target_lang = process.argv[4];
 
-var req = http.get("http://fanyi.youdao.com/openapi.do?keyfrom=" + client_config.keyfrom + "&key=" + client_config.apikey + "&type=data&doctype=json&version=1.1&q=" + queryString, function(res) {
-        //console.log('STATUS: ' + res.statusCode);
-        //console.log('HEADERS: ' + JSON.stringify(res.headers));
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-                var chunk = JSON.parse(chunk);
-                //console.log(chunk.from + ': ' + chunk.trans_result[0].src + ' => ' + chunk.to + ': ' + chunk.trans_result[0].dst);
-                console.log(chunk);
-        });
+if (typeof(target_lang) === "undefined") {
+    if (source_lang === "zh") {
+        target_lang = "en";
+    } else {
+        target_lang = "zh";
+    }
+}
+
+let postData = queryString.stringify({
+    'key' : client_config.google_translate_apikey,
+    'source' : source_lang,
+    'target' : target_lang,
+    'model' : 'nmt',
+    'q' : query_string
 });
 
+const options = {
+  host: "translation.googleapis.com",
+  path: "/language/translate/v2",
+  method: 'POST',
+  headers : {
+     'Content-Type': 'application/x-www-form-urlencoded',
+     'Content-Length': postData.length
+  }
+};
+
+const req = https.request(options, (res) => {
+  //console.log(`STATUS: ${res.statusCode}`);
+  //console.log(`HEADERS: ${JSON.stringify(res.headers)}`);
+  res.setEncoding('utf8');
+  res.on('data', (chunk) => {
+    var chunk = JSON.parse(chunk);
+    console.log(chunk.data.translations[0].translatedText);
+  });
+  res.on('end', () => {
+    //console.log('No more data in response.');
+  });
+});
+
+req.on('error', (e) => {
+  console.error(`problem with request: ${e.message}`);
+});
+
+// Write data to request body
+req.write(postData);
 req.end();
