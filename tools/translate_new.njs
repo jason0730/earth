@@ -53,6 +53,7 @@ const req = https.request(options, (res) => {
 
 req.on('error', (e) => {
   console.error(`problem with request: ${e.message}`);
+  console.error('https://cloud.google.com/translate/docs/languages');
 });
 
 // Write data to request body
